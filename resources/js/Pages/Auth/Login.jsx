@@ -177,7 +177,7 @@ export default function Login({ status, canResetPassword }) {
                     </form>
                     
                     <p className="mt-8 text-center text-gray-500 text-sm font-medium">
-                        © 2024 Groupe OCP. Tous droits réservés.
+                        © 2026 Groupe OCP. Tous droits réservés.
                     </p>
                 </motion.div>
             </div>

@@ -7,7 +7,7 @@ import { Plus, Edit, Trash2, Database, Search, Filter } from 'lucide-react';
 export default function Index({ equipements }) {
     return (
         <AuthenticatedLayout>
-            <Head title="Inventaire - OCP Asset Management" />
+            <Head title="Inventaire | ASSET MGMT" />
             
             <div className="space-y-8">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -78,8 +78,24 @@ export default function Index({ equipements }) {
                                         </td>
                                         <td className="px-6 py-4 text-right">
                                             <div className="flex justify-end gap-2">
-                                                <button className="p-2 bg-white/5 rounded-lg text-gray-500 hover:text-white hover:bg-white/10 transition-all"><Edit size={16} /></button>
-                                                <button className="p-2 bg-white/5 rounded-lg text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-all"><Trash2 size={16} /></button>
+                                                <Link 
+                                                    href={route('equipements.edit', equipement.id)}
+                                                    className="p-2 bg-white/5 rounded-lg text-gray-500 hover:text-white hover:bg-white/10 transition-all"
+                                                >
+                                                    <Edit size={16} />
+                                                </Link>
+                                                <button 
+                                                    onClick={() => {
+                                                        if (confirm('Voulez-vous vraiment supprimer cet equipement ?')) {
+                                                            import('@inertiajs/react').then(({ router }) => {
+                                                                router.delete(route('equipements.destroy', equipement.id));
+                                                            });
+                                                        }
+                                                    }}
+                                                    className="p-2 bg-white/5 rounded-lg text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-all"
+                                                >
+                                                    <Trash2 size={16} />
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>

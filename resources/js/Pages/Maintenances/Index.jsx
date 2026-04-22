@@ -7,7 +7,7 @@ import { Plus, Wrench, Search, Clock } from 'lucide-react';
 export default function Index({ maintenances }) {
     return (
         <AuthenticatedLayout>
-            <Head title="Maintenance - OCP Asset Management" />
+            <Head title="Maintenance | ASSET MGMT" />
             
             <div className="space-y-8">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -62,7 +62,12 @@ export default function Index({ maintenances }) {
                                              </span>
                                         </td>
                                         <td className="px-6 py-4 text-right">
-                                            <button className="text-ocp-green hover:text-white font-bold text-xs uppercase tracking-widest">Detail</button>
+                                            <Link 
+                                                href={route('maintenances.show', m.id)}
+                                                className="text-ocp-green hover:text-white font-bold text-xs uppercase tracking-widest transition-colors"
+                                            >
+                                                Detail
+                                            </Link>
                                         </td>
                                     </tr>
                                 ))}

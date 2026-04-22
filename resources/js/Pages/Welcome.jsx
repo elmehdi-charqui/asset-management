@@ -6,7 +6,7 @@ import { Shield, BarChart3, Database, ChevronRight } from 'lucide-react';
 export default function Welcome({ auth }) {
     return (
         <div className="min-h-screen bg-ocp-navy text-white selection:bg-ocp-green selection:text-white overflow-hidden">
-            <Head title="OCP Asset Management - Accueil" />
+            <Head title="ASSET MGMT | Accueil" />
 
             {/* Navbar */}
             <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-ocp-navy/80 backdrop-blur-lg">

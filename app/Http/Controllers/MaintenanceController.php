@@ -49,9 +49,11 @@ class MaintenanceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(\App\Models\Maintenance $maintenance)
     {
-        //
+        return \Inertia\Inertia::render('Maintenances/Show', [
+            'maintenance' => $maintenance->load('equipement.site')
+        ]);
     }
 
     /**
